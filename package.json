@@ -1,0 +1,29 @@
+{
+  "name": "sitespeed-grade",
+  "version": "1.0.1",
+  "description": "Sitespeed grade.",
+  "keywords": [
+    "sitespeed",
+    "score",
+    "grade"
+  ],
+  "author": "zhanghuabin",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "peerDependencies": {
+    "sitespeed.io": "^10.0.0"
+  },
+  "devDependencies": {
+    "sitespeed.io": "^11.4.0"
+  },
+  "scripts": {
+    "test:github": "sitespeed.io https://github.com --config ./.sitespeedio.json",
+    "test:baidu": "sitespeed.io https://www.baidu.com --config ./.sitespeedio.json",
+    "test:zhihu": "sitespeed.io https://www.zhihu.com/ --config ./.sitespeedio.json",
+    "test:test": "sitespeed.io http://www.daqzjd.com/jzh/taier.html?my3 --config ./.sitespeedio.json",
+    "debug": "node --inspect-brk=0.0.0.0:9229 ./node_modules/sitespeed.io/bin/sitespeed.js https://www.baidu.com/ --config ./.sitespeedio.json"
+  }
+}

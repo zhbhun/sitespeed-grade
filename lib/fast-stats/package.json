@@ -1,0 +1,72 @@
+{
+  "_args": [
+    [
+      "fast-stats@0.0.5",
+      "/home/vagrant/work/learning/frontend/practice/performance/devtool/sitespeed/examples/temp/node_modules/sitespeed.io"
+    ]
+  ],
+  "_from": "fast-stats@0.0.5",
+  "_id": "fast-stats@0.0.5",
+  "_inBundle": false,
+  "_integrity": "sha512-HtS5uSqMiwfxFFyukKP/F0f3o8/8oqHtbInsaq2s0+V2J2MEHGyukWajWqzKS57sWLTOgJ7bKMRhA4fG5cTQ3Q==",
+  "_location": "/sitespeed.io/fast-stats",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "fast-stats@0.0.5",
+    "name": "fast-stats",
+    "escapedName": "fast-stats",
+    "rawSpec": "0.0.5",
+    "saveSpec": null,
+    "fetchSpec": "0.0.5"
+  },
+  "_requiredBy": [
+    "/sitespeed.io",
+    "/sitespeed.io/browsertime",
+    "/sitespeed.io/webcoach/browsertime"
+  ],
+  "_resolved": "https://registry.npmjs.org/fast-stats/-/fast-stats-0.0.5.tgz",
+  "_spec": "0.0.5",
+  "_where": "/home/vagrant/work/learning/frontend/practice/performance/devtool/sitespeed/examples/temp/node_modules/sitespeed.io",
+  "author": {
+    "name": "Philip Tellis",
+    "email": "philip@bluesmoon.info",
+    "url": "http://bluesmoon.info/"
+  },
+  "bugs": {
+    "url": "https://github.com/bluesmoon/node-faststats/issues"
+  },
+  "dependencies": {},
+  "description": "Quickly calculate common statistics on lists of numbers",
+  "devDependencies": {
+    "gauss": "0.2.12"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "homepage": "https://github.com/bluesmoon/node-faststats",
+  "keywords": [
+    "statistics",
+    "statistic",
+    "gauss",
+    "lognormal",
+    "normal",
+    "mean",
+    "median",
+    "mode",
+    "standard deviation",
+    "margin of error",
+    "iqr",
+    "quartile",
+    "inter quartile range"
+  ],
+  "license": "Apache-2.0",
+  "main": "faststats.js",
+  "name": "fast-stats",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bluesmoon/node-faststats.git"
+  },
+  "version": "0.0.5"
+}

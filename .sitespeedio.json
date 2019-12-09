@@ -1,0 +1,57 @@
+{
+  "browsertime": {
+    "browser": "chrome",
+    "headless": true,
+    "iterations": 1,
+    "screenshot": true,
+    "screenshotParams": {
+      "type": "jpg",
+      "jpg": {
+        "quality": 60
+      },
+      "maxSize": 1080
+    },
+    "video": false,
+    "visualElements": false,
+    "visualMetrics": false,
+    "chrome": {
+      "args": ["disable-http2"],
+      "cdp": {
+        "performance": true
+      },
+      "CPUThrottlingRate": 3,
+      "collectLongTasks": true,
+      "collectPerfLog": true,
+      "enableTraceScreenshots": true,
+      "includeResponseBodies": false,
+      "mobileEmulation": {
+        "deviceName": "iPhone 6"
+      },
+      "timeline": true
+    },
+    "connectivity": {
+      "alias": "4g",
+      "engine": "tsproxy",
+      "profile": "custom",
+      "downstreamKbps": 9216,
+      "upstreamKbps": 9216,
+      "latency": 170
+    }
+  },
+  "gzipHar": false,
+  "logToFile": false,
+  "plugins": {
+    "add": ["./lib/index.js", "graphite", "analysisstorer"],
+    "remove": ["graphite", "html"]
+  },
+  "graphite": {
+    "host": "127.0.0.1",
+    "port": "2003",
+    "includeQueryParams": true
+  },
+  "grade": {
+    "total": 10
+  },
+  "summary": false,
+  "utc": false
+}
