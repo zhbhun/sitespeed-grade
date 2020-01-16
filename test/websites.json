@@ -1,0 +1,246 @@
+[
+  {
+    "type": "search",
+    "name": "baidu",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://m.baidu.com"
+      }
+    ]
+  },
+  {
+    "type": "search",
+    "name": "biying",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://cn.bing.com"
+      }
+    ]
+  },
+  {
+    "type": "search",
+    "name": "sougou",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://wap.sogou.com"
+      }
+    ]
+  },
+  {
+    "type": "search",
+    "name": "360",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://m.so.com"
+      }
+    ]
+  },
+  {
+    "type": "search",
+    "name": "sm",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://m.sm.cn"
+      }
+    ]
+  },
+  {
+    "type": "video",
+    "name": "haokan",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://haokan.baidu.com"
+      }
+    ]
+  },
+  {
+    "type": "video",
+    "name": "iqiyi",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://m.iqiyi.com"
+      }
+    ]
+  },
+  {
+    "type": "video",
+    "name": "youku",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://www.youku.com"
+      }
+    ]
+  },
+  {
+    "type": "video",
+    "name": "qq",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://m.v.qq.com/index.html"
+      }
+    ]
+  },
+  {
+    "type": "news",
+    "name": "sina",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://news.sina.cn"
+      }
+    ]
+  },
+  {
+    "type": "news",
+    "name": "qq",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://xw.qq.com"
+      }
+    ]
+  },
+  {
+    "type": "news",
+    "name": "163",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://3g.163.com"
+      }
+    ]
+  },
+  {
+    "type": "game",
+    "name": "4399",
+    "pages": [
+      {
+        "name": "home",
+        "url": "http://h.4399.com"
+      }
+    ]
+  },
+  {
+    "type": "game",
+    "name": "7k7k",
+    "pages": [
+      {
+        "name": "home",
+        "url": "http://m.7k7k.com"
+      }
+    ]
+  },
+  {
+    "type": "game",
+    "name": "17173",
+    "pages": [
+      {
+        "name": "home",
+        "url": "http://m.17173.com"
+      }
+    ]
+  },
+  {
+    "type": "shopping",
+    "name": "taobao",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://main.m.taobao.com"
+      }
+    ]
+  },
+  {
+    "type": "shopping",
+    "name": "suning",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://m.suning.com"
+      }
+    ]
+  },
+  {
+    "type": "shopping",
+    "name": "jd",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://m.jd.com"
+      }
+    ]
+  },
+  {
+    "type": "novel",
+    "name": "qidian",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://m.qidian.com"
+      }
+    ]
+  },
+  {
+    "type": "novel",
+    "name": "xxsy",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://m.xxsy.net"
+      }
+    ]
+  },
+  {
+    "type": "novel",
+    "name": "zongheng",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://m.zongheng.com"
+      }
+    ]
+  },
+  {
+    "type": "life",
+    "name": "lianjia",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://m.lianjia.com"
+      }
+    ]
+  },
+  {
+    "type": "meiyou",
+    "name": "assess",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://assess.seeyouyima.com"
+      },
+      {
+        "name": "detail",
+        "url": "https://assess.seeyouyima.com/detail?using_wk=0&id=278"
+      }
+    ]
+  },
+  {
+    "type": "meiyou",
+    "name": "youxuan",
+    "pages": [
+      {
+        "name": "home",
+        "url": "https://youxuan.seeyouyima.com/youxuan-list/home"
+      }
+    ]
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "browsertime": {
+    "browser": "chrome",
+    "headless": true,
+    "iterations": 3,
+    "screenshot": true,
+    "screenshotParams": {
+      "type": "jpg",
+      "jpg": {
+        "quality": 60
+      },
+      "maxSize": 1080
+    },
+    "video": false,
+    "visualElements": false,
+    "visualMetrics": false,
+    "cpu": true,
+    "chrome": {
+      "args": ["disable-http2"],
+      "timeline": true,
+      "enableTraceScreenshots": true,
+      "visualMetricsUsingTrace": true,
+      "cdp": {
+        "performance": true
+      },
+      "collectLongTasks": true,
+      "collectPerfLog": true,
+      "CPUThrottlingRate": 3,
+      "includeResponseBodies": false,
+      "mobileEmulation": {
+        "deviceName": "iPhone 8"
+      }
+    },
+    "connectivity": {
+      "alias": "4g",
+      "engine": "tsproxy",
+      "profile": "custom",
+      "downstreamKbps": 12288,
+      "upstreamKbps": 3072,
+      "latency": 30
+    }
+  },
+  "gzipHar": false,
+  "logToFile": false,
+  "plugins": {
+    "add": ["./lib/index.js", "analysisstorer"],
+    "remove": ["html"]
+  },
+  "grade": {
+    "total": 10
+  },
+  "summary": false,
+  "utc": false,
+  "headless": true
+}

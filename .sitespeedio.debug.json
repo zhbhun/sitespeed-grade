@@ -14,28 +14,30 @@
     "video": false,
     "visualElements": false,
     "visualMetrics": false,
+    "cpu": true,
     "chrome": {
       "args": ["disable-http2"],
+      "timeline": true,
+      "enableTraceScreenshots": true,
+      "visualMetricsUsingTrace": true,
       "cdp": {
         "performance": true
       },
-      "CPUThrottlingRate": 3,
       "collectLongTasks": true,
       "collectPerfLog": true,
-      "enableTraceScreenshots": true,
+      "CPUThrottlingRate": 3,
       "includeResponseBodies": false,
       "mobileEmulation": {
-        "deviceName": "iPhone 6"
-      },
-      "timeline": true
+        "deviceName": "iPhone 8"
+      }
     },
     "connectivity": {
       "alias": "4g",
       "engine": "tsproxy",
       "profile": "custom",
-      "downstreamKbps": 9216,
-      "upstreamKbps": 9216,
-      "latency": 170
+      "downstreamKbps": 12288,
+      "upstreamKbps": 3072,
+      "latency": 30
     }
   },
   "gzipHar": false,
@@ -53,5 +55,6 @@
     "total": 10
   },
   "summary": false,
-  "utc": false
+  "utc": false,
+  "headless": true
 }

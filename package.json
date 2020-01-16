@@ -17,13 +17,18 @@
     "sitespeed.io": "^10.0.0"
   },
   "devDependencies": {
-    "sitespeed.io": "^11.4.0"
+    "chalk": "^3.0.0",
+    "fs-extra": "^8.1.0",
+    "shelljs": "^0.8.3",
+    "sitespeed.io": "^11.9.3"
   },
   "scripts": {
-    "test:github": "sitespeed.io https://github.com --config ./.sitespeedio.json",
-    "test:baidu": "sitespeed.io https://www.baidu.com --config ./.sitespeedio.json",
-    "test:zhihu": "sitespeed.io https://www.zhihu.com/ --config ./.sitespeedio.json",
-    "test:test": "sitespeed.io http://www.daqzjd.com/jzh/taier.html?my3 --config ./.sitespeedio.json",
-    "debug": "node --inspect-brk=0.0.0.0:9229 ./node_modules/sitespeed.io/bin/sitespeed.js https://www.baidu.com/ --config ./.sitespeedio.json"
+    "test:grade": "node ./test/grade.js",
+    "test:latency": "node ./test/latency.js",
+    "test:download": "node ./test/download.js",
+    "debug": "node --inspect-brk=0.0.0.0:9229 ./node_modules/sitespeed.io/bin/sitespeed.js https://www.baidu.com/ --config ./.sitespeedio.debug.json"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }

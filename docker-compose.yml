@@ -41,7 +41,7 @@ services:
         # - /absolute/path/to/graphite/conf/carbon.conf:/opt/graphite/conf/carbon.conf
     grafana-setup:
       # image: sitespeedio/grafana-bootstrap:10.2.0
-      image: zhbhun/grafana-bootstrap:11.3.0
+      image: zhbhun/grafana-bootstrap:11.3.2
       links:
         - grafana
       environment:
