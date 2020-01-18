@@ -18,6 +18,22 @@ npx sitespeed.io https://github.com --plugins.add ./node_modules/sitespeed-grade
     ```shell
     npx sitespeed.io https://github.com --plugin.remove graphite --plugins.add ./node_modules/sitespeed-grade/lib/index.js --plugin.add graphite
     ```
+## 开发调试
+
+```shell
+docker-compose pull
+mkdir volumes
+mkdir volumes/grafana
+chmod 777 volumes/grafana
+mkdir volumes/whisper
+docker-compose up -d
+npm run debug # 调试
+npm run test:latency # 测试网络延迟对性能的影响
+npm run test:download # 测试下载速率对性能的影响
+npm run test:grade # 测试常见网页的性能测试结果
+# 访问 http://localhost:3000 查看 grafana 数据
+# 修改 lib/defaultConfig 调整性能评级规则
+```
 
 ## 配置说明
 
@@ -26,6 +42,15 @@ npx sitespeed.io https://github.com --plugins.add ./node_modules/sitespeed-grade
   grade: {
     total: 10, // 评级总分，默认为 10
     metrics: [ // 评级指标集合
+      {
+        name: 'xxx', // 指标名称,
+        weight: 10, // 指标评级权重
+        negative: false, // 是否计入总权重
+        targets: function (value) {
+          // 计算返回得分率
+        },
+        value: 'browserScripts.${iteration}.timings.pageTimings.redirectionTime' // 原始值（直接获取）
+      },
       {
         name: 'xxx', // 指标名称,
         weight: 10, // 指标评级权重
@@ -80,13 +105,15 @@ npx sitespeed.io https://github.com --plugins.add ./node_modules/sitespeed-grade
     如果原始值不存在，则忽略该项指标
 
 2. 根据指标项的目标值计算得分因子（用上一步获得的原始值和目标值 targets 比对）；
-3. 计算指标项总权重（只有得分因子大于 0 的才算在内）
+3. 计算指标项总权重（只有 negative 不是 true 的才算在内）
 
     如果得分因子为小于 0，可以认为该项指标作为附件扣分项，不计入总权重
 
 3. 计算评级得分：评级总分 * ∑(指标项得分因子 * 指标项权重 / 指标项总权重 )
 
 ### 默认配置
+
+可用的性能指标
 
 1. 技术指标
 
@@ -106,19 +133,21 @@ npx sitespeed.io https://github.com --plugins.add ./node_modules/sitespeed-grade
 
 默认配置参考 [defaultConfig.js](./lib/defaultConfig.js)
 
-## 开发调试
+### 网络配置
 
-```shell
-docker-compose pull
-mkdir volumes
-mkdir volumes/grafana
-chmod 777 volumes/grafana
-mkdir volumes/whisper
-docker-compose up -d
-npm run test:xxx
-# 访问 http://localhost:3000 查看 grafana 数据
-# 修改 lib/defaultConfig 调整性能评级规则
-```
+根据最新的 [中国宽带速率状况报告_第23期（2019Q1）.pdf](http://www.chinabda.cn/Site/Default/Uploads/kindeditor/file/20190522/%E4%B8%AD%E5%9B%BD%E5%AE%BD%E5%B8%A6%E9%80%9F%E7%8E%87%E7%8A%B6%E5%86%B5%E6%8A%A5%E5%91%8A_%E7%AC%AC23%E6%9C%9F%EF%BC%882019Q1%EF%BC%89.pdf)，可知目前 4G 的平均速率在 23.01Mbit/s 左右，3G 的平均速率在 8.89Mbit/s 左右。由于移动宽带网络由基站覆盖范围内的大量用户共享，区域内的人员密集程度会直接影响到每个用户所能体验到的下载速率。另一方面，移动宽带用户上网体验速率还会受到建筑物阻隔、用户的位置移动速率、用户终端配置等影响。所以在模拟测试的时候，建议在统计出来的数据基础上再打个半折。
+
+- 4G
+
+    - downstream：12288Kbps / 12Mbps
+    - upstream: 3072Kbps / 3MBps
+    - rtt: 30
+
+- 3G
+
+    - downstream：4096Kbps / 4Mbps
+    - upstream: 1024Kbps / 1MBps
+    - rtt: 50
 
 ## 测试数据
 
@@ -241,21 +270,9 @@ baidu 9216
     - 90 * 8 / 3172 = 0.22698612862547288s
     - ...
 
-## 网络配置
+### 首屏体验测试
 
-根据最新的 [中国宽带速率状况报告_第23期（2019Q1）.pdf](http://www.chinabda.cn/Site/Default/Uploads/kindeditor/file/20190522/%E4%B8%AD%E5%9B%BD%E5%AE%BD%E5%B8%A6%E9%80%9F%E7%8E%87%E7%8A%B6%E5%86%B5%E6%8A%A5%E5%91%8A_%E7%AC%AC23%E6%9C%9F%EF%BC%882019Q1%EF%BC%89.pdf)，可知目前 4G 的平均速率在 23.01Mbit/s 左右，3G 的平均速率在 8.89Mbit/s 左右。由于移动宽带网络由基站覆盖范围内的大量用户共享，区域内的人员密集程度会直接影响到每个用户所能体验到的下载速率。另一方面，移动宽带用户上网体验速率还会受到建筑物阻隔、用户的位置移动速率、用户终端配置等影响。所以在模拟测试的时候，建议在统计出来的数据基础上再打个半折。
-
-- 4G
-
-    - downstream：12288Kbps / 12Mbps
-    - upstream: 3072Kbps / 3MBps
-    - rtt: 30
-
-- 3G
-
-    - downstream：4096Kbps / 4Mbps
-    - upstream: 1024Kbps / 1MBps
-    - rtt: 50
+参见 [paint](./test/paint/README.md)
 
 ## 误区
 
